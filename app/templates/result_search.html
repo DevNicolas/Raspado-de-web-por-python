@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search in scholar</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/search.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-result.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
+<body>
+   <header class="box-sup">
+       <form action="{{ url_for('result_search') }}" method="POST">
+           <input type="search" name="search" id="search" placeholder="Search"><button type="submit"><i class="fas fa-search"></i></button>
+       </form>
+    </header> 
+   <main class="result-search">
+        <section class="result-articles">
+            <h1 style="font-size: .98em" >Result search by: <span class="query">{{query}}</span></h1>
+            {% for list in lists %}
+                <article class="article">
+                    <a href="{{list.split('$')[3]}}" target="_blank" class="title-article">{{list.split("$")[0]}}</a>
+                    <p class="description-article" >{{list.split("$")[1]}}</p>
+                    <p>{{list.split("$")[2]}}</p>
+                </article>
+            {% endfor %}
+        </section>
+   </main>
+</body>
+</html>
