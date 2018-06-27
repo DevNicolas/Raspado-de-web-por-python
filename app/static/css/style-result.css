@@ -1,0 +1,109 @@
+:root{
+    --color-btn: #3db6fd;
+    --color-texto: #89889a;
+    --color-fondo: #fff;
+    --color-barra: #e7e7e7;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: var(--color-texto);
+    font-family: 'Roboto', sans-serif;
+}
+.box-sup{
+    width: 100%;
+    background-color: var(--color-barra);
+    padding-left: 1em;
+    padding-top: 1em; 
+    padding-bottom: 1em;
+    box-sizing: border-box;
+    position: fixed;
+    box-shadow: 0em 0em .3em .03em var(--color-texto);
+}
+.result-articles{
+    margin-top: 5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+.article{
+    margin-bottom: 2em;
+    width: 70%; 
+}
+.title-article{
+    font-size: 1.2em;
+    text-decoration: none; 
+}
+.description-article{
+    margin-top: .2em; 
+}
+input[type="search"],button[type="submit"]{
+    border: none;
+    width: 30rem;
+    height: 2rem;
+    background-color: var(--color-fondo);
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-texto);
+    box-shadow: 0em .05em .5em .05em var(--color-texto);
+}
+input[type="search"]{
+    padding-left: .5em;
+    padding-right: .5em;
+}
+button[type="submit"]{
+    width: 5rem;
+    background-color: var(--color-btn);
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+@media screen and (max-width:800px){
+    .result-articles{
+        margin-top: 8.2rem;
+    }
+    .article{
+        margin-bottom: 2em;
+        width: 100%; 
+    }
+    .box-sup{
+        padding: 1em 0 1em 0;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em 0 1em;
+    }
+    input[type="search"],button[type="submit"]{
+        border: none;
+        width: 100%;
+        height: 2.5rem;
+        box-shadow: 0em .05em .5em .05em var(--color-texto);
+    }
+    button[type="submit"]{
+        margin-top: .5em;
+    }
+}
+
+@media screen and (max-width:400px){
+    
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="search"],button[type="submit"]{
+        border: none;
+        width: 100%;
+        height: 2.5rem;
+        box-shadow: 0em .05em .5em .05em var(--color-texto);
+    }
+    button[type="submit"]{
+        margin-top: .5em;
+    }
+}
